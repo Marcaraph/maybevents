@@ -1,14 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Events</h1>
+<div class="px-4 py-5 text-center hero">
+    <h1 class="display-2 fw-bold">MaybEvent</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead text_hero mb-4">You can participate to an Event, MAYBE ! Why Maybe ? Because this app works SOMETIMES. So Maybe you can have fun.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      </div>
+    </div>
+  </div>
 
-<div id="events">
-  <% @events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
-  <% end %>
-</div>
+<% if user_signed_in? %>
+  <h1>Events</h1>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 ">
+      <div id="events">
+        <% @events.each do |event| %>
+          <%= render event %>
+        <% end %>
+      </div>
+    </div>
+    
+<% else %>
+<h3>Sign in if you want to see the events occuring in your city </h3>
+<% end %>
 
-<%= link_to "New event", new_event_path %>

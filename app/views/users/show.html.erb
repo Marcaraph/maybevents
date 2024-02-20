@@ -2,9 +2,12 @@
 
 <%= render @user %>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+<% if current_user == @user %>
+  <div>
+    <%= link_to "Edit this user", edit_user_path(@user) %> |
+    <%= link_to "Back to users", users_path %>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
-</div>
+    <%= button_to "Destroy this user", @user, method: :delete %>
+  </div>
+<% end %>
+

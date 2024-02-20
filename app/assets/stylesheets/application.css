@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+
+ /* index of event */
+
+.hero{
+    color: wheat;
+    background-image: url(https://i.ibb.co/XxhdMXs/concert-3387324-1920.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+.hero h1{
+    filter: invert(80%);
+}
+
+.text_hero{
+    filter: invert(80%);
+    font-weight: 500;
+}

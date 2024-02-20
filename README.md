@@ -1,5 +1,7 @@
 # README
 
+Lien de l'app "https://maybevents-2.fly.dev/"
+
 Welcome on our new website
 
 This README would normally document whatever steps are necessary to get the
@@ -24,3 +26,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+

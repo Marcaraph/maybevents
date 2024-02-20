@@ -1,13 +1,16 @@
-# fly.toml app configuration file generated for maybevents on 2024-02-19T21:48:12+01:00
+# fly.toml app configuration file generated for maybevents-2 on 2024-02-20T18:59:17+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'maybevents'
+app = 'maybevents-2'
 primary_region = 'cdg'
 console_command = '/rails/bin/rails console'
 
 [build]
+
+[deploy]
+  release_command = './bin/rails db:prepare'
 
 [http_service]
   internal_port = 3000

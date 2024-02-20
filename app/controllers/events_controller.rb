@@ -4,15 +4,18 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all
+    @all_attendees = rand(1..20)
   end
 
   # GET /events/1 or /events/1.json
   def show
+    @all_attendees = rand(1..20)
   end
 
   # GET /events/new
   def new
     @event = Event.new
+    # @admin = User.find(current_user.id)
   end
 
   # GET /events/1/edit
@@ -22,6 +25,9 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
+    @event.update(admin: current_user)
+
+    puts @event
 
     respond_to do |format|
       if @event.save
