@@ -1,32 +1,25 @@
-<div id="<%= dom_id event %>">
-  <p>
-    <strong>Start date:</strong>
-    <%= event.start_date %>
-  </p>
 
-  <p>
-    <strong>Duration:</strong>
-    <%= event.duration %>
-  </p>
+<div class="back_event" id="<%= dom_id event %>">
+<div class="back_filter d-flex">
+  <div class="col m-1 w-100 d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+    </div>
+    <div class>
+      <h3 class="fs-2 text-body-emphasis"><%= event.title %></h3>
+      <p><%= event.description %></p>
 
-  <p>
-    <strong>Title:</strong>
-    <%= event.title %>
-  </p>
+      <p> <strong>Start date :</strong> <%= event.start_date %> </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= event.description %>
-  </p>
+      <p> <strong>Duration :</strong> <%= event.duration %> </p>
 
-  <p>
-    <strong>Price:</strong>
-    <%= event.price %>
-  </p>
+      <p> <strong>Attendees :</strong> <%= @all_attendees %> </p>
 
-  <p>
-    <strong>Location:</strong>
-    <%= event.location %>
-  </p>
+      <p> <strong>Price :</strong> <%= event.price %> </p>
+      
+      <p> <strong>Location:</strong> <%= event.location %> </p>
+      <%= link_to "Show this event", event, {class: 'btn btn-primary'}%>
 
+    </div>
+  </div>
+</div>
 </div>
