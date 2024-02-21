@@ -12,14 +12,13 @@
 <% if user_signed_in? %>
   <h1>Events</h1>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 ">
-      <div id="events">
+<!--      <div id="events">-->
         <% @events.each do |event| %>
           <%= render event %>
         <% end %>
-      </div>
+<!--      </div>-->
     </div>
-    
 <% else %>
-<h3>Sign in if you want to see the events occuring in your city </h3>
+  <h3>Sign in if you want to see the events occuring in your city </h3>
 <% end %>
 
