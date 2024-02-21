@@ -3,7 +3,8 @@ class Attendance < ApplicationRecord
   belongs_to :user
 
   after_create :send_reservation_confirmation
-
+  validates :user_id, uniqueness: { scope: :event_id }
+  
   def send_reservation_confirmation
      #=> id evenement en question
      puts "00000000000000000000000000000"

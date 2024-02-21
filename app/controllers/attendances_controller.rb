@@ -6,13 +6,23 @@ class AttendancesController < ApplicationController
     end
 
     def new
+       puts "CA CREEE LAAddddddddjjjjjjjjjjjjjjjjjjjjdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddAAA"
+       @event = Event.find(params[:event_id])
+       attendance = Attendance.new(event: @event, user: current_user, stripe_customer: current_user.email)
 
+       respond_to do |format|
+       if attendance.save
+            format.html { redirect_to "/events/#{params[:event_id]}", notice: "VOUS ETES INSCRIT YOUPI" }
+            format.json { head :no_content }
+        else
+            format.html { redirect_to "/events/#{params[:event_id]}", notice: "Votre inscription a déjà été prise en compte." }
+            format.json { head :no_content }
+            end
+        end
     end
 
     def create
-        puts "CA CREEE LAAAAA"
-        @event = Event.find(params[:event])
-        Attendance.create(event: @event, user: current_user, stripe_customer: current_user.email)
+
     end
 
     def destroy

@@ -15,7 +15,7 @@
 <% else %>
   <%= link_to "Back to events", events_path %> 
   <% if @event.is_free?%>
-    <%= link_to "Evenement gratuit ! Inscrivez vous sans payer", attendance_path(event: @event.id) %>
+    <%= link_to "Evenement gratuit ! Inscrivez vous sans payer", new_attendance_path(event_id: @event) %>
   <% else %>
     <%= button_to "Passer commande", checkout_create_path(total: @event.price, event_id: @event.id), class: "btn btn-primary", data: {turbo: false} %>
   <% end %>
