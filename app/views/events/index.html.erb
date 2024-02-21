@@ -11,11 +11,13 @@
 
 <% if user_signed_in? %>
   <h1>Events</h1>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 ">
+    <div class="row g-4 py-5 ">
 <!--      <div id="events">-->
         <% @events.each do |event| %>
           <%= render event %>
+          <%= link_to "Show this event", event, {class: 'btn btn-primary'}%>
         <% end %>
+        
 <!--      </div>-->
     </div>
 <% else %>
