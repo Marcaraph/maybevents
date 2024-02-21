@@ -34,6 +34,7 @@ class CheckoutController < ApplicationController
         puts @session 
 
         attendance = Attendance.new(event: event, user: current_user, stripe_customer: @session.customer_details.email)
+        puts "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
         if attendance.save
             redirect_to "/events/#{@event_id}"
         end

@@ -2,10 +2,21 @@
 
 <%= render @event %>
 
+<% if @event.admin == current_user %>
 <div>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
+
+  <%= link_to "My Attendance", attendances_path(event_id: @event) %> |
   <%= link_to "Back to events", events_path %>
-  <%= button_to "Passer commande", checkout_create_path(total: @event.price, event_id: @event.id), class: "btn btn-primary", data: {turbo: false} %>
+
   <%= button_to "Destroy this event", @event, method: :delete %>
+  <%= link_to "Edit my event", edit_event_path %>
  
 </div>
+<% else %>
+  <%= link_to "Back to events", events_path %> 
+  <% if @event.is_free?%>
+    <%= link_to "Evenement gratuit ! Inscrivez vous sans payer", attendance_path(event: @event.id) %>
+  <% else %>
+    <%= button_to "Passer commande", checkout_create_path(total: @event.price, event_id: @event.id), class: "btn btn-primary", data: {turbo: false} %>
+  <% end %>
+<% end %>

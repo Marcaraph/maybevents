@@ -1,0 +1,6 @@
+<h1>VOICI LES UTILISATEURS DE TON EVENT</h1>
+<% %>
+<% @attendees.each do |attendance| %>
+    <p> <%= attendance.user.email %> </p>
+<% end %>
+
