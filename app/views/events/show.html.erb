@@ -5,7 +5,7 @@
 <div>
   <%= link_to "Edit this event", edit_event_path(@event) %> |
   <%= link_to "Back to events", events_path %>
-
+  <%= button_to "Passer commande", checkout_create_path(total: @event.price, event_id: @event.id), class: "btn btn-primary", data: {turbo: false} %>
   <%= button_to "Destroy this event", @event, method: :delete %>
  
 </div>

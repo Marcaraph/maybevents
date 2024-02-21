@@ -10,6 +10,7 @@ class EventsController < ApplicationController
   # GET /events/1 or /events/1.json
   def show
     @all_attendees = rand(1..20)
+    
   end
 
   # GET /events/new

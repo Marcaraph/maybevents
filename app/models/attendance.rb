@@ -5,7 +5,10 @@ class Attendance < ApplicationRecord
   after_create :send_reservation_confirmation
 
   def send_reservation_confirmation
-    EventMailer.participation_email(@event.user, user).deliver_now
+     #=> id evenement en question
+     puts "00000000000000000000000000000"
+    puts self
+     EventMailer.participation_email(self.event.admin).deliver_now
   end
 
 end
