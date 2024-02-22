@@ -8,6 +8,9 @@
     <h3 class="fs-2 text-body-emphasis"><%= event.title %></h3>
     <p><%= event.description %></p>
 
+    <h3>Image actuelle</h3>
+      <%= image_tag @event.picture if @event.picture.attached? %>
+
       <p> <strong>Start date :</strong> <%= event.start_date %> </p>
 
       <p> <strong>Duration :</strong> <%= event.duration %> </p>
