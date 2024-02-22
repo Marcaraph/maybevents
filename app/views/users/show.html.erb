@@ -55,6 +55,7 @@
                         <div class="profile-work">
                             <h5>Events :</h5>
                             <% @events_user.each do |event| %>
+                                <%= image_tag event.picture if event.picture.attached? %>
                               <li><a href="/events/<%= event.id %>"><%= event.title %></a></li>
                               <% end %>
                         </div>

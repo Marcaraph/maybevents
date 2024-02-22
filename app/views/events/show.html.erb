@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 
-
+<%= image_tag @event.picture if @event.picture.attached? %>
 <%= render @event %>
 
 <% if @event.admin == current_user %>
