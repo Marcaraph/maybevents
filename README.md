@@ -1,5 +1,5 @@
 # README
-
+DESTROY my account -> REDIRECRECT LIST OF ALL USER
 Lien de l'app "https://maybevents-2.fly.dev/"
 
 Welcome on our new website

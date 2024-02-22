@@ -1,26 +1,47 @@
-<p style="color: green"><%= notice %></p>
+<header class="bg-dark py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-5 fw-bolder text-white mb-2">MaybEvents</h1>
+                                <p class="lead fw-normal text-white-50 mb-4">You can participate to an Event, MAYBE ! Why Maybe ? Because this app works SOMETIMES. So Maybe you can have fun. Or fuck off.</p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
+                                    <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..."></div>
+                    </div>
+                </div>
+            </header>
 
-<div class="px-4 py-5 text-center hero">
-    <h1 class="display-2 fw-bold">MaybEvent</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead text_hero mb-4">You can participate to an Event, MAYBE ! Why Maybe ? Because this app works SOMETIMES. So Maybe you can have fun.</p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      </div>
-    </div>
-  </div>
-
-<% if user_signed_in? %>
-  <h1>Events</h1>
-    <div class="row g-4 py-5 ">
-<!--      <div id="events">-->
-        <% @events.each do |event| %>
-          <%= render event %>
-          <%= link_to "Show this event", event, {class: 'btn btn-primary'}%>
-        <% end %>
-        
-<!--      </div>-->
-    </div>
-<% else %>
-  <h3>Sign in if you want to see the events occuring in your city </h3>
-<% end %>
-
+            <% if user_signed_in? %>
+                <section class="py-5" id="features">
+                    <div class="container px-5 my-5">
+                        <div class="row gx-5">
+                            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Events in your area : </h2></div>
+                            <div class="col-lg-8">
+                                <div class="row gx-5">
+                                    <% @events.each do |event| %>
+                                        <div class="col-lg-6 mb-5">
+                                            <div class="row row-col-6 row-col-md-5">
+                                                <div class="col mb-5 h-100">
+                                                    <h2 class="h5"><strong><u><%= event.title %></u></strong></h2>
+                                                    <p class="h5"><strong>Start date :</strong> <%= event.start_date %></p>
+                                                    <p class="h5"><strong>Duration :</strong> <%= event.duration %></p>
+                                                    <p class="h5"><strong>Price :</strong> <%= event.price %></p>
+                                                    <p class="h5"><strong>Location:</strong> <%= event.location %></p>
+                                                    <p class="mb-0"><%= link_to "Show this event", event, {class: 'btn btn-primary'}%></p>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            <% else %>
+                <h3>Sign in if you want to see the events occuring in your city </h3>
+            <% end %>

@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  get 'avatars/create'
   devise_for :users
   root to: "events#index"
-  resources :events
-  resources :users
+
+  resources :events do
+    resources :pictures, only: [:create]
+  end
+  
+  resources :users do
+    resources :avatars, only: [:create]
+  end
   resources :attendances, only: [:new, :create, :destroy, :index]
   
 

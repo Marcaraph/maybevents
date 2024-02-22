@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  has_one_attached :picture
+
     belongs_to :admin, class_name: "User"
     has_many :attendances
     has_many :stripe_customers, through: :attendances, source: :user

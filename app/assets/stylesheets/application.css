@@ -10,26 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require bootstrap
+ *= require modern_business
+ *= require profile
+ *= require main
  */
 
 
  /* index of event */
-
-.hero{
-    color: wheat;
-    background-image: url(https://i.ibb.co/XxhdMXs/concert-3387324-1920.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 500px;
-}
-.hero h1{
-    filter: invert(80%);
-}
-
-.text_hero{
-    filter: invert(80%);
-    font-weight: 500;
-}
