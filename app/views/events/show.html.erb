@@ -1,5 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
+
+<h3>Image actuelle</h3>
+<%if @event.picture.attached?%>
+  <%= image_tag @event.picture, alt: 'image' %>
+<%else%>
+  <p>=== Il n'y a pas encore d'image liée à cet event ===</p>
+<%end%>
+
 <%= render @event %>
 
 <% if @event.admin == current_user %>

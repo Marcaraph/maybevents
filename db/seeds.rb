@@ -12,7 +12,7 @@ User.destroy_all
 Event.destroy_all
 Attendance.destroy_all
 
-# CREATION OF 10 USER AND PUTT ALL OF THEM INSIDE A ARRAY
+# # CREATION OF 10 USER AND PUTT ALL OF THEM INSIDE A ARRAY
 # all_user = []
 # 15.times do |i|
 #     email = Faker::Internet.email

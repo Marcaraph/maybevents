@@ -1,12 +1,12 @@
 
 <div class="back_event" id="<%= dom_id event %>">
-<div class="back_filter d-flex">
-  <div class="col m-1 w-100 d-flex align-items-start">
-    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+<div class="back_filter">
+  <div class="col m-1 w-100">
+    <div class="icon-square text-body-emphasis bg-body-secondaryfs-4  me-3">
     </div>
     <div class>
-      <h3 class="fs-2 text-body-emphasis"><%= event.title %></h3>
-      <p><%= event.description %></p>
+    <h3 class="fs-2 text-body-emphasis"><%= event.title %></h3>
+    <p><%= event.description %></p>
 
       <p> <strong>Start date :</strong> <%= event.start_date %> </p>
 
@@ -17,9 +17,8 @@
       <p> <strong>Price :</strong> <%= event.price %> </p>
       
       <p> <strong>Location:</strong> <%= event.location %> </p>
-      
 
-      
+      <p> <strong>Admin email:</strong> <%= event.admin.email %> </p>      
 
     </div>
   </div>
