@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @events = Event.all
     @user_profile = User.find(params[:id])
     @events_user = Event.where(admin: @user_profile)
+
   end
 
   # GET /users/new
