@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container px-5">
+    <a class="navbar-brand" href="/">Maybevents</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">  
+    <% if user_signed_in? %>
+        <% if current_user.is_admin == true %>
+            <li class="nav-item"><a class="nav-link" href="/admins">Admin Dashboard</a></li>
+        <% end %> 
+    <% end %>
+        <li class="nav-item"><a class="nav-link" href="/events/new">Create an event</a></li>
+            <% if user_signed_in? %>
+            <!-- SHOW THE DROPDOWN ASSOCIATED TO THE CONNECTED USER --> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Profile</a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                <li><span class="dropdown-item"><%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %></span></li>
+                <li><span class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete}, class: "dropdown-item" %></span></li>
+                </ul>
+            </li>
+            <% else %>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sign In/Sign Up</a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                    <li><a class="dropdown-item" href="/users/sign_in">Sign In</a></li>
+                    <li><a class="dropdown-item" href="/users/sign_up">Sign Up</a></li>
+                </ul>
+            </li>
+            <% end %>
+    
+        </ul>
+    </div>
+</div>
+</nav>

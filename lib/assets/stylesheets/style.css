@@ -1,0 +1,38 @@
+/* FOOTER */
+
+footer{
+  background-color: #2c3e50;
+  color: rgb(171, 223, 230);
+}
+
+footer a{
+  color: rgb(171, 223, 230);
+}
+
+.container_footer{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.link_footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.git_link{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+.name{
+  text-align: center;
+}
+
+a:hover{
+color: rgb(83, 83, 200);
+}
